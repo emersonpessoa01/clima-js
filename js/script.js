@@ -11,38 +11,88 @@
 // https://api.openweathermap.org/data/2.5/weather?q=belem&units=metric&appid=d0b0e263748d76e177f14c61c484fd74&lang=pt_br
 
 /* Variável e seleção de elementos */
-let apikey = "d0b0e263748d76e177f14c61c484fd74";
-let apiCountry = "https://www.countryflagsapi.com/png/";
+const apiKey = "d0b0e263748d76e177f14c61c484fd74";
+const apiCountryURL = "https://www.countryflagicons.com/FLAT/64/";
+const apiUnsplash = "https://source.unsplash.com/1600x900/?";
 
 const cityInput = document.querySelector("#city-input");
-const searchBtn = document.querySelector("#search-btn");
+const searchBtn = document.querySelector("#search");
 
 const cityElement = document.querySelector("#city");
-const countryElement = document.querySelector("#country");
-const temperatureElement = document.querySelector("#temperature span");
-const tempElement = document.querySelector("#description");
+const tempElement = document.querySelector("#temperature span");
+const descElement = document.querySelector("#description");
 const weatherIconElement = document.querySelector("#weather-icon");
+const countryElement = document.querySelector("#country");
 const umidityElement = document.querySelector("#umidity span");
 const windElement = document.querySelector("#wind span");
 
-/* Funções */
+const weatherContainer = document.querySelector("#weather-data");
+
+const errorMessageContainer = document.querySelector("#error-message");
+const loader = document.querySelector("#loader");
+
+const suggestionContainer = document.querySelector("#suggestions");
+const suggestionButtons = document.querySelectorAll("#suggestions button");
+
+// Loader
+const toggleLoader = () => {
+  loader.classList.toggle("hide");
+};
+
 const getWeatherData = async (city) => {
-  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&unit=metric&appid=${apikey}`;
+  toggleLoader();
+
+  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+  console.log(apiWeatherURL);
 
   const res = await fetch(apiWeatherURL);
   const data = await res.json();
-  console.log(data);
+
+  toggleLoader();
+
+  return data;
 };
 
-/* Mostra dos dados inseridos no input */
-function showWeatherData(city) {
-  // console.log(city);
-  getWeatherData(city);
-}
+// Tratamento de erro
+const showErrorMessage = () => {
+  errorMessageContainer.classList.remove("hide");
+};
 
-/* Eventos */
-/* Captura o valor do input */
-searchBtn.addEventListener("click", (e) => {
+const hideInformation = () => {
+  errorMessageContainer.classList.add("hide");
+  weatherContainer.classList.add("hide");
+
+  suggestionContainer.classList.add("hide");
+};
+
+const showWeatherData = async (city) => {
+  hideInformation();
+
+  const data = await getWeatherData(city);
+
+  if (data.cod === "404") {
+    showErrorMessage();
+    return;
+  }
+
+  cityElement.innerText = data.name;
+  tempElement.innerText = parseInt(data.main.temp);
+  descElement.innerText = data.weather[0].description;
+  weatherIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+  );
+  countryElement.setAttribute("src", `${apiCountryURL}${data.sys.country}.png`);
+  umidityElement.innerText = `${data.main.humidity} %`;
+  windElement.innerText = `${data.wind.speed} km/h`;
+
+  // Change bg image
+  document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
+
+  weatherContainer.classList.remove("hide");
+};
+
+searchBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   let city = cityInput.value;
   cityInput.value = "";
@@ -58,5 +108,18 @@ cityInput.addEventListener("keydown", (e) => {
     // Defina o valor do campo de entrada como vazio ("")
     cityInput.value = "";
     showWeatherData(city);
+
+    /* if (e.code === "Enter") {
+    let city = e.target.value;
+    cityInput.value = "";
+    showWeatherData(city); */
   }
+});
+// Sugestões
+suggestionButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const city = btn.getAttribute("id");
+
+    showWeatherData(city);
+  });
 });
