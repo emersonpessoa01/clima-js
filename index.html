@@ -27,8 +27,13 @@
       <div class="form">
         <h3>Confira o clima de uma cidade:</h3>
         <div class="form-input-container">
-          <input type="text" placeholder="Digite o nome da cidade" />
-          <button type="button">
+          <input
+            autofocus
+            type="text"
+            placeholder="Digite o nome da cidade"
+            id="city-input"
+          />
+          <button id="search-btn" type="button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -36,7 +41,7 @@
           <h2>
             <i class="fa-solid fa-location-dot"></i><span id="city">Maceió</span
             ><img
-              src="https://www.countryflags.com/wp-content/uploads/brazil-flag-png-large.png"
+              src="https://www.countryflags.com/png/br"
               alt="Bandeira do país"
               id="country"
             />
@@ -47,7 +52,7 @@
             <img
               src="https://openweathermap.org/img/wn/01d.png"
               alt="Condições do tempo"
-              id="waether-icon"
+              id="weather-icon"
             />
           </div>
           <div id="details-container">
