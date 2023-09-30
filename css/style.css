@@ -66,7 +66,7 @@ body {
 .container {
   background: #5c54edd9;
   box-shadow: rgba(0, 0, 0, 0.667) 1px 3px 10px;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   color: var(--gelo);
   border-radius: 1rem;
   max-width: 400px;
