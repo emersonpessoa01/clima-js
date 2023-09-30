@@ -34,6 +34,9 @@ const loader = document.querySelector("#loader");
 const suggestionContainer = document.querySelector("#suggestions");
 const suggestionButtons = document.querySelectorAll("#suggestions button");
 
+const update = document.querySelector("#update");
+console.log(update);
+
 // Loader
 const toggleLoader = () => {
   loader.classList.toggle("hide");
@@ -90,6 +93,7 @@ const showWeatherData = async (city) => {
   document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
 
   weatherContainer.classList.remove("hide");
+  update.classList.remove("update");
 };
 
 searchBtn.addEventListener("click", async (e) => {
@@ -98,6 +102,13 @@ searchBtn.addEventListener("click", async (e) => {
   cityInput.value = "";
   // alert(city);
   showWeatherData(city);
+});
+update.addEventListener("click", async (e) => {
+  e.preventDefault();
+  location.reload();
+  // alert(city);
+  showWeatherData(city);
+  
 });
 
 cityInput.addEventListener("keydown", (e) => {
@@ -119,7 +130,6 @@ cityInput.addEventListener("keydown", (e) => {
 suggestionButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const city = btn.getAttribute("id");
-
     showWeatherData(city);
   });
 });
