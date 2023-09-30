@@ -29,13 +29,14 @@ const windElement = document.querySelector("#wind span");
 const weatherContainer = document.querySelector("#weather-data");
 
 const errorMessageContainer = document.querySelector("#error-message");
+const errorEmptyContainer = document.querySelector("#error-empty");
+console.log(errorEmptyContainer)
 const loader = document.querySelector("#loader");
 
 const suggestionContainer = document.querySelector("#suggestions");
 const suggestionButtons = document.querySelectorAll("#suggestions button");
 
 const update = document.querySelector("#update");
-console.log(update);
 
 // Loader
 const toggleLoader = () => {
@@ -60,6 +61,9 @@ const getWeatherData = async (city) => {
 const showErrorMessage = () => {
   errorMessageContainer.classList.remove("hide");
 };
+const showErrorEmpty=()=>{
+  errorEmptyContainer.classList.remove("hide")
+}
 
 const hideInformation = () => {
   errorMessageContainer.classList.add("hide");
@@ -77,6 +81,7 @@ const showWeatherData = async (city) => {
     showErrorMessage();
     return;
   }
+  
 
   cityElement.innerText = data.name;
   tempElement.innerText = parseInt(data.main.temp);
@@ -94,18 +99,25 @@ const showWeatherData = async (city) => {
 
   weatherContainer.classList.remove("hide");
   update.classList.remove("update");
+  errorEmptyContainer.classList.add("hide")
 };
 
 searchBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   let city = cityInput.value;
   cityInput.value = "";
+  if(city ===""){
+    showErrorEmpty();
+    hideInformation();
+    return
+  }
   // alert(city);
   showWeatherData(city);
 });
 update.addEventListener("click", async (e) => {
   e.preventDefault();
   location.reload();
+
   // alert(city);
   showWeatherData(city);
 });
