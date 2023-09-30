@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  background: var(--bg);
+  background: var(--bg2);
   box-shadow: rgba(0, 0, 0, 0.667) 1px 3px 10px;
   padding: 1.5rem 2rem;
   color: var(--gelo);

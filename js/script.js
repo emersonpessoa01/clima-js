@@ -30,7 +30,7 @@ const weatherContainer = document.querySelector("#weather-data");
 
 const errorMessageContainer = document.querySelector("#error-message");
 const errorEmptyContainer = document.querySelector("#error-empty");
-console.log(errorEmptyContainer)
+console.log(errorEmptyContainer);
 const loader = document.querySelector("#loader");
 
 const suggestionContainer = document.querySelector("#suggestions");
@@ -61,9 +61,9 @@ const getWeatherData = async (city) => {
 const showErrorMessage = () => {
   errorMessageContainer.classList.remove("hide");
 };
-const showErrorEmpty=()=>{
-  errorEmptyContainer.classList.remove("hide")
-}
+const showErrorEmpty = () => {
+  errorEmptyContainer.classList.remove("hide");
+};
 
 const hideInformation = () => {
   errorMessageContainer.classList.add("hide");
@@ -81,7 +81,6 @@ const showWeatherData = async (city) => {
     showErrorMessage();
     return;
   }
-  
 
   cityElement.innerText = data.name;
   tempElement.innerText = parseInt(data.main.temp);
@@ -96,20 +95,21 @@ const showWeatherData = async (city) => {
 
   // Change bg image
   document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
+  document.body.style.backgroundRepeat = "norepeat"
 
   weatherContainer.classList.remove("hide");
   update.classList.remove("update");
-  errorEmptyContainer.classList.add("hide")
+  errorEmptyContainer.classList.add("hide");
 };
 
 searchBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   let city = cityInput.value;
   cityInput.value = "";
-  if(city ===""){
+  if (city === "") {
     showErrorEmpty();
     hideInformation();
-    return
+    return;
   }
   // alert(city);
   showWeatherData(city);
