@@ -1,11 +1,14 @@
 /* Geral */
 :root {
   --azul-claro: #8ddef5;
+  --azul-claro2:#8ddff5b6;
   --lilas1: #594cee;
   --lilas2: #5c54ed;
   --lilas3: #3931ce;
+  --bg:#5c54eda8;
   --gelo: #fdfdfd;
   --verde: #8ddf58;
+  --bege:#eae0c2a8;
 }
 * {
   padding: 0;
@@ -64,7 +67,7 @@ body {
 }
 
 .container {
-  background: #5c54edd9;
+  background: var(--bg);
   box-shadow: rgba(0, 0, 0, 0.667) 1px 3px 10px;
   padding: 1.5rem 2rem;
   color: var(--gelo);
@@ -105,10 +108,11 @@ body {
   background: var(--azul-claro);
   color: #fff;
   cursor: pointer;
+  transition: all .8s;
 }
 .form button:hover {
-  background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-  background-color: #ccc2a6;
+  background: linear-gradient(to bottom, var(--bege) 5%, var(--bege) 100%);
+  background-color: var(--bege);
 }
 
 /* Clima */
@@ -237,7 +241,7 @@ body {
     var(--azul-claro) 5%,
     var(--lilas1) 100%
   );
-  background-color: #eae0c2;
+  background-color: var(--bege);
   border-radius: 0.25rem;
   border: none;
   display: inline-block;
@@ -253,8 +257,8 @@ body {
 
 #suggestions button:hover {
   /* opacity: 1; */
-  background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-  background-color: #ccc2a6;
+  background: linear-gradient(to bottom, var(--bege) 5%, var(--bege) 100%);
+  background-color: var(--bege);
 }
 #suggestions button:active {
   position: relative;
@@ -279,10 +283,10 @@ body {
   box-shadow: 0px 1px 0px 0px #1c1b18;
   background: linear-gradient(
     to bottom,
-    var(--azul-claro) 5%,
-    var(--lilas1) 100%
+    var(--azul-claro2) 5%,
+    var(--bg) 100%
   );
-  background-color: #eae0c2;
+  /* background-color: #eae0c2; */
   border-radius: 0.25rem;
   border: none;
   cursor: pointer;
@@ -296,10 +300,11 @@ body {
   display: block;
   width: 50%;
   margin: 0 auto;
+  transition: all .8s;
 }
 #update:hover {
-  background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-  background-color: #ccc2a6;
+  background: linear-gradient(to bottom, var(--bege) 5%, var(--bege) 100%);
+  background-color: var(--bege);
 }
 #update:active {
   position: relative;

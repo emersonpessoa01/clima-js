@@ -108,7 +108,6 @@ update.addEventListener("click", async (e) => {
   location.reload();
   // alert(city);
   showWeatherData(city);
-  
 });
 
 cityInput.addEventListener("keydown", (e) => {
