@@ -1,0 +1,168 @@
+body {
+    /* background: linear-gradient(
+      180deg,
+      var(--lilas1) 10%,
+      var(--lilas2) 25%,
+      var(--azul-claro) 100%
+    ); */
+  
+    /* background: linear-gradient(to bottom, var(--lilas1), var(--azul-claro)); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    padding: 2rem 7%;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  /* para esconder aulgumas áreas */
+  .hide {
+    display: none !important;
+  }
+  
+  .container {
+    background: var(--bg);
+    box-shadow: rgba(0, 0, 0, 0.667) 1px 3px 10px;
+    padding: 1.5rem 2rem;
+    color: var(--gelo);
+    border-radius: 1rem;
+    max-width: 400px;
+  }
+  
+  /* Form */
+  
+  /* Form */
+  .form h3 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+    /* padding: 0 2rem; */
+    /* text-align: center; */
+  }
+  
+  .form-input-container {
+    display: flex;
+  }
+  
+  .form input {
+    padding: 0.8rem;
+    border: none;
+    outline: none;
+    flex: 1;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  
+  .form button {
+    padding: 0 1rem;
+    /* min-height: 50px; */
+    /* margin-left: 8px; */
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: var(--azul-claro);
+    color: #fff;
+    cursor: pointer;
+    transition: all .8s;
+  }
+  .form button:hover {
+    background: linear-gradient(to bottom, var(--bege) 5%, var(--bege) 100%);
+    background-color: var(--bege);
+  }
+  
+  /* Clima */
+  #weather-data {
+    /* padding: 1rem; */
+    /* border-top:1px solid #fff; */
+    /* padding-top: 1.5rem; */
+    /* margin-bottom: 1.5rem; */
+    border: 0.1px solid #cdcdcd;
+    border-radius: 8px;
+    padding: 0;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  /* Clima */
+  #weather-data,
+  #error-message,
+  #loader,
+  #suggestions {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  #weather-data h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    padding: 0 1rem;
+  }
+  
+  #weather-data h2 i {
+    font-size: 1rem;
+    color: #dd0031;
+  }
+  
+  #weather-data h2 span {
+    margin: 0.6rem;
+  }
+  
+  #temperature {
+    font-size: 2rem;
+  }
+  
+  #country {
+    height: 2rem;
+    border-radius: 0.2rem;
+  }
+  
+  #description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.6rem 0;
+  }
+  
+  #description {
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  
+  #details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #details-container #umidity {
+    border-right: 1px solid #fff;
+    margin: 0.6rem;
+    padding: 0.6rem;
+  }
+  
+  /* Loader */
+  #loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+  #loader i {
+    animation: rotate 1s linear infinite;
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
