@@ -95,7 +95,11 @@ const showWeatherData = async (city) => {
 
   // Change bg image
   document.body.style.backgroundImage = `url("${apiUnsplash + city}")`;
-  document.body.style.backgroundRepeat = "norepeat"
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center top";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+
 
   weatherContainer.classList.remove("hide");
   update.classList.remove("update");
