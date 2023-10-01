@@ -101,8 +101,8 @@ body {
   border-bottom: 1px solid #fff;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  /* padding-top: 1.5rem; */
-  /* padding-bottom: 1.5rem; */
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -111,7 +111,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 0.6rem; */
+  margin-bottom: 0.6rem;
   padding: 0 1rem;
 }
 
@@ -137,16 +137,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin: 0.6rem 0; */
+  margin: 0.6rem 0;
 }
 
 #description {
   text-transform: capitalize;
   font-weight: 700;
-}
-
-#weather-icon{
-  height:34px ;
 }
 
 #details-container {
@@ -158,9 +154,8 @@ body {
 #details-container #umidity {
   border-right: 1px solid #fff;
   margin: 0.6rem;
-  padding: 0 0.6rem;
+  padding: 0.6rem;
 }
-
 
 /* Loader */
 #loader {
