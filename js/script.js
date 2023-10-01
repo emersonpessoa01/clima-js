@@ -11,9 +11,9 @@
 // https://api.openweathermap.org/data/2.5/weather?q=belem&units=metric&appid=d0b0e263748d76e177f14c61c484fd74&lang=pt_br
 
 /* Variável e seleção de elementos */
-// import WEATHER_API_KEY from "./apiKey.js";
+import WEATHER_API_KEY from "./apiKey.js";
 
-const apiKey = "d0b0e263748d76e177f14c61c484fd74";
+// const apiKey = "d0b0e263748d76e177f14c61c484fd74";
 const apiCountryURL = "https://www.countryflagicons.com/FLAT/64/";
 const apiUnsplash = "https://source.unsplash.com/1600x900/?";
 
@@ -47,7 +47,7 @@ const toggleLoader = () => {
 const getWeatherData = async (city) => {
   toggleLoader();
 
-  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+  const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${WEATHER_API_KEY}&lang=pt_br`;
   console.log(apiWeatherURL);
 
   const res = await fetch(apiWeatherURL);
