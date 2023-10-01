@@ -13,7 +13,6 @@
 /* Variável e seleção de elementos */
 import WEATHER_API_KEY from "./test.js";
 
-// const apiKey = "d0b0e263748d76e177f14c61c484fd74";
 const apiCountryURL = "https://www.countryflagicons.com/FLAT/64/";
 const apiUnsplash = "https://source.unsplash.com/1600x900/?";
 
