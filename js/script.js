@@ -11,7 +11,7 @@
 // https://api.openweathermap.org/data/2.5/weather?q=belem&units=metric&appid=d0b0e263748d76e177f14c61c484fd74&lang=pt_br
 
 /* Variável e seleção de elementos */
-import WEATHER_API_KEY from "./apiKey.js";
+import WEATHER_API_KEY from "./test.js";
 
 // const apiKey = "d0b0e263748d76e177f14c61c484fd74";
 const apiCountryURL = "https://www.countryflagicons.com/FLAT/64/";
