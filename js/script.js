@@ -100,7 +100,6 @@ const showWeatherData = async (city) => {
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundAttachment = "fixed";
 
-
   weatherContainer.classList.remove("hide");
   update.classList.remove("update");
   errorEmptyContainer.classList.add("hide");
