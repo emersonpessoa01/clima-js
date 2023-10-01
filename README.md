@@ -4,7 +4,7 @@
 
 ## Pré-visualização:
 
-[clima-js](https://clima-js-silk.vercel.app/)
+[clima-js](https://clima-weather-js.netlify.app/)
 
 <div align="center"><img src="image/belem.png" width=auto>
 </div>
