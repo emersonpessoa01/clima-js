@@ -1,20 +1,4 @@
-body {
-  /* background: linear-gradient(
-      180deg,
-      var(--lilas1) 10%,
-      var(--lilas2) 25%,
-      var(--azul-claro) 100%
-    ); */
 
-  /* background: linear-gradient(to bottom, var(--lilas1), var(--azul-claro)); */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem 7%;
-  background-position: center;
-  background-size: cover;
-}
 
 /* para esconder aulgumas áreas */
 .hide {

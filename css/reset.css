@@ -1,46 +1,63 @@
 /* Geral */
 :root {
-    --azul-claro: #8ddef5a8;
-    --azul-claro2:#8ddff5b6;
-    --lilas1: #594cee;
-    --lilas2: #5c54ed;
-    --lilas3: #3931ce;
-    --bg:#5c54eda8;
-    --bg2:#3b43d3c6;
-    --gelo: #fdfdfd;
-    --verde: #8ddf58;
-    --bege:#eae0c2a8;
-    --red:#dd0031;
-  }
-  * {
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", "Courier New", Courier, monospace;
-  }
-  html {
-    font-size: 100%;
-    overflow-x: hidden;
-    scroll-padding-top: 4rem;
-    scroll-behavior: smooth;
-  }
-  html::-webkit-scrollbar {
-    width: 1rem;
-    height: 0.25px;
-  }
-  html::-webkit-scrollbar-track {
-    /* background: transparent; */
-    background: inset 0 0 5px #a5aaad;
-  }
-  html::-webkit-scrollbar-thumb {
-    background: var(--lilas2);
-    border-radius: 5rem;
-  }
-  html::-webkit-scrollbar-thumb:hover {
-    background: var(--lilas3);
-    cursor: pointer;
-  }
-  
-  ::selection {
-    color: var(--lilas2);
-    background: var(--gelo);
-  }
+  --azul-claro: #8ddef5a8;
+  --azul-claro2: #8ddff5b6;
+  --lilas1: #594cee;
+  --lilas2: #5c54ed;
+  --lilas3: #3931ce;
+  --bg: #5c54eda8;
+  --bg2: #3b43d3c6;
+  --gelo: #fdfdfd;
+  --verde: #8ddf58;
+  --bege: #eae0c2a8;
+  --red: #dd0031;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", "Courier New", Courier, monospace;
+}
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+  scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+  height: 0.25px;
+}
+html::-webkit-scrollbar-track {
+  /* background: transparent; */
+  background: inset 0 0 5px #a5aaad;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--lilas2);
+  border-radius: 5rem;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--lilas3);
+  cursor: pointer;
+}
+
+::selection {
+  color: var(--lilas2);
+  background: var(--gelo);
+}
+body {
+  /* background: linear-gradient(
+        180deg,
+        var(--lilas1) 10%,
+        var(--lilas2) 25%,
+        var(--azul-claro) 100%
+      ); */
+
+  /* background: linear-gradient(to bottom, var(--lilas1), var(--azul-claro)); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  padding: 2rem 7%;
+  background-position: center;
+  background-size: cover;
+}
