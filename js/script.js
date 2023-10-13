@@ -13,7 +13,9 @@
 /* Variável e seleção de elementos */
 import WEATHER_API_KEY from "./test.js";
 
-const apiCountryURL = "https://www.countryflagicons.com/FLAT/64/";
+
+// const apiCountryURL = "https://www.countryflagicons.com/FLAT/64/";
+const apiCountryURL = "https://flagicons.lipis.dev/flags/4x3/";
 const apiUnsplash = "https://source.unsplash.com/1600x900/?";
 
 const cityInput = document.querySelector("#city-input");
@@ -38,6 +40,7 @@ const suggestionButtons = document.querySelectorAll("#suggestions button");
 
 const update = document.querySelector("#update");
 
+
 // Loader
 const toggleLoader = () => {
   loader.classList.toggle("hide");
@@ -45,6 +48,7 @@ const toggleLoader = () => {
 
 const getWeatherData = async (city) => {
   toggleLoader();
+  
 
   const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${WEATHER_API_KEY}&lang=pt_br`;
   console.log(apiWeatherURL);
@@ -54,6 +58,7 @@ const getWeatherData = async (city) => {
 
   toggleLoader();
 
+  // console.log(data);
   return data;
 };
 
@@ -89,7 +94,7 @@ const showWeatherData = async (city) => {
     "src",
     `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
   );
-  countryElement.setAttribute("src", `${apiCountryURL}${data.sys.country}.png`);
+  countryElement.setAttribute("src", `${apiCountryURL}${data.sys.country.toLowerCase()}.svg`);
   umidityElement.innerText = `${data.main.humidity} %`;
   windElement.innerText = `${data.wind.speed} km/h`;
 
